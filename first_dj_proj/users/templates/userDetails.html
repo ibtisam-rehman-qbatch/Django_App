@@ -1,0 +1,15 @@
+
+{% extends "master.html" %}
+
+{% block title %}
+    <title>{{myUser.firstName}} Details</title>
+{%  endblock %}
+
+{%  block content %}
+    <h1> {{ myUser.firstName }} {{ myUser.lastName }} </h1>
+
+    <p> Phone Number: {{ myUser.phone }} </p>
+    <p> Joining Date: {{ myUser.joinedDate }}</p> 
+    <p> Back to <a href = '/users'> all Users</a></p>
+    
+{%  endblock %}

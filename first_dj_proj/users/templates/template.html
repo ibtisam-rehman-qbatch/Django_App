@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+<head>
+    
+    <title>Testing</title>
+</head>
+<body>
+
+    <h1> Testing a View </h1>
+    {% for x in mydata %}
+    <p>{{x.firstName}} </p>
+    {% endfor %}
+
+    {{mydata}}
+    
+</body>
+</html>

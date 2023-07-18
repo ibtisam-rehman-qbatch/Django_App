@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import User
+from django.db.models import Q
 
 def users(request):
     myUsers = User.objects.all().values
@@ -30,4 +31,16 @@ def main(request):
 
     return HttpResponse(index_template.render() )
 
-# Create your views here.
+# ------------------------Testing a View-------------------------------------------------
+def testing(request):
+    mydata = User.objects.filter(firstName="Ibtisam").values()
+    context = {
+        "mydata" : mydata,
+    }
+
+    template= loader.get_template('template.html')
+
+
+    return HttpResponse(template.render(context, request))
+
+# ---------------------------------------------------------------------------------------

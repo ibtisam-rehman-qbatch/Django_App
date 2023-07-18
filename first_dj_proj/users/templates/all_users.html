@@ -1,19 +1,17 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
 {% block title %}
-    A Com App - List of all Users
+  A Com App - List of all Users
 {% endblock %}
 
-{%  block content %}
-    <p><a href="/">HOME</a></p>
-
-
+{% block content %}
+  <div class="mycard">
     <h1>All Users</h1>
 
     <ul>
-        {% for x in myUsers %}
-            <li><a href="details/{{x.id}}"> {{ x.firstName }} {{ x.lastName }} </a></li> 
-            
-        {% endfor %}
+      {% for x in myUsers %}
+        <li onclick="window.location=href='details/{{ x.id }}'">{{ x.firstName }} {{ x.lastName }}</li>
+      {% endfor %}
     </ul>
+  </div>
 {% endblock %}
